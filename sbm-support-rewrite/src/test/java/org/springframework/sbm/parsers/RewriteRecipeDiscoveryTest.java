@@ -185,6 +185,24 @@ class RewriteRecipeDiscoveryTest {
     }
 
     @Test
+    @DisplayName("Should Find Recipe Categories222")
+    void shouldFindRecipeCategories222() {
+        ResourceLoader resourceLoader = new ClasspathScanningLoader(new Properties(), new String[]{});
+        Collection<CategoryDescriptor> categoryDescriptors = resourceLoader.listCategoryDescriptors();
+
+        categoryDescriptors.stream()
+            .forEach(cd -> {
+                System.out.println("Tags: " + cd.getTags());
+                System.out.println("Description: " + cd.getDescription());
+                System.out.println("DisplayName: " + cd.getDisplayName());
+                System.out.println("Priority: " + cd.getPriority());
+                System.out.println("PackageName: " + cd.getPackageName());
+                System.out.println("------------------------------------------------");
+            });
+
+    }
+
+    @Test
     @DisplayName("Should Find RecipeDescriptor By Name")
     void shouldFindRecipeDescriptorByName() {
 

@@ -38,7 +38,7 @@ import java.util.stream.Stream;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-class ProjectScanner {
+public class ProjectScanner {
     private final ResourceLoader resourceLoader;
 
     public List<Resource> scan(Path baseDir, Set<String> ignoredPatters) {
